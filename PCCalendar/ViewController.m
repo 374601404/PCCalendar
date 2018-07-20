@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
-    PCCalendarView *calendarView = [PCCalendarView initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, 330 * SCREEN_WIDTH/375.f) CalendarDateClickedHandler:^(NSDate *date) {
+    PCCalendarView *calendarView = [PCCalendarView initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH/1.2, 330 * SCREEN_WIDTH/375.f/1.2) CalendarDateClickedHandler:^(NSDate *date) {
         NSLog(@"点击的日期为:%@",[date stringWithDateFormat:@"yyyy年MM月"]);
     }];
     calendarView.selectedDate = [NSDate date];
