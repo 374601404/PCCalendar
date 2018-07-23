@@ -45,8 +45,10 @@
 
 #pragma mark private helper
 - (NSDate *)getDateFromIndexPath:(NSIndexPath *)indexPath{
-    //本月的第一天是周几 0--6
+    //返回:周天至周六为0--6
     NSInteger firstWeekday = [_date weekdayOfMonthFirstDay];
+    //本月的第一天是周几,转化为 周一至周天为 0--6
+    firstWeekday = (firstWeekday + 6)%7;
     //与今天差多少天 日历第一行开始显示当月的日期
     NSInteger day = (firstWeekday + 1) + (self.date.components.day - 1) - (indexPath.row + 1);
     return [self.date dateAddDay:-day];
@@ -108,7 +110,7 @@
 #pragma mark UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    _selectedDate = [self getDateFromIndexPath:indexPath];
+    self.selectedDate = [self getDateFromIndexPath:indexPath];
     //可选-更新偏移量
     [self updateContentOffset];
     //更新选中状态

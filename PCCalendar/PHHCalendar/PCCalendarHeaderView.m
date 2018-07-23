@@ -112,7 +112,7 @@
 }
 
 - (void)pc_setupWeekLabs{
-    NSArray<NSString *> *titles = @[@"日",@"一",@"二",@"三",@"四",@"五",@"六"];
+    NSArray<NSString *> *titles = @[@"一",@"二",@"三",@"四",@"五",@"六",@"日"];
     [titles enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UILabel *lab = [[UILabel alloc] init];
         lab.textAlignment = NSTextAlignmentCenter;
