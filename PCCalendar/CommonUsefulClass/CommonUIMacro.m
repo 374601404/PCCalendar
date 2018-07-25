@@ -8,6 +8,7 @@
 
 #import "CommonUIMacro.h"
 
+
 @implementation CommonUIMacro
 
 @end

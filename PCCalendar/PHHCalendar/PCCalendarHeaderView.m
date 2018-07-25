@@ -11,8 +11,7 @@
 #import "UIColor+HexString.h"
 #import "NSDate+PCCalendar.h"
 #import "UIView+Frame.h"
-
-#define ADAPTIVE_SIZE_FLOAT(a) self.width*((a)/[UIScreen mainScreen].bounds.size.width)
+#define ADAPTIVE_SIZE_FLOAT(a) self.width*((a)/375.f)
 
 @interface PCCalendarHeaderView()
 
@@ -61,9 +60,10 @@
     self.titleLab.centerX = self.centerX;
     self.titleLab.y = ADAPTIVE_SIZE_FLOAT(11);
     
-    CGFloat weekleftInset = ADAPTIVE_SIZE_FLOAT(16);
+    CGFloat weekleftInset = ADAPTIVE_SIZE_FLOAT(14);
     CGFloat weekY = self.height - ADAPTIVE_SIZE_FLOAT(17 + 9);
     [self.weekDayLabs enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"self.width:%f",self.width);
         obj.x = weekleftInset + idx * ADAPTIVE_SIZE_FLOAT(33 + 19);
         obj.y = weekY;
         obj.width = ADAPTIVE_SIZE_FLOAT(33);

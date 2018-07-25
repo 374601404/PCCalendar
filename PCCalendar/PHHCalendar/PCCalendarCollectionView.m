@@ -11,6 +11,7 @@
 #import "UIView+Frame.h"
 #import "PCCalendarItemCollectionViewCell.h"
 
+
 @interface PCCalendarCollectionView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property(strong,nonatomic)NSDate *selectedDate;//选中的日子
@@ -27,10 +28,10 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     UICollectionViewFlowLayout *collectionViewLayout = [[UICollectionViewFlowLayout alloc] init];
-    collectionViewLayout.itemSize = CGSizeMake(frame.size.width *(34.f/[UIScreen mainScreen].bounds.size.width), frame.size.width *(34.f/[UIScreen mainScreen].bounds.size.width));
-    collectionViewLayout.minimumLineSpacing = frame.size.width *(5.f/[UIScreen mainScreen].bounds.size.width);
-    collectionViewLayout.minimumInteritemSpacing = frame.size.width *(18.f/[UIScreen mainScreen].bounds.size.width);
-    collectionViewLayout.sectionInset = UIEdgeInsetsMake(0, frame.size.width *(14.f/[UIScreen mainScreen].bounds.size.width), 0, frame.size.width *(14.f/[UIScreen mainScreen].bounds.size.width));//日历距左右间距为14.5f
+    collectionViewLayout.itemSize = CGSizeMake(frame.size.width * (34.f/375.f),frame.size.width * (34.f/375.f));
+    collectionViewLayout.minimumLineSpacing = frame.size.height *(5.f/(330 - 82));
+    collectionViewLayout.minimumInteritemSpacing = frame.size.width *(18.f/375.f);
+    collectionViewLayout.sectionInset = UIEdgeInsetsMake(0, frame.size.width *(14.f/375.f), 0, frame.size.width *(14.f/375.f));//日历距左右间距为14.5f
     
     self = [super initWithFrame:frame collectionViewLayout:collectionViewLayout];
     if (self) {
