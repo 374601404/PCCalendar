@@ -46,12 +46,12 @@
 - (void)layoutSubviews{
     
     self.preMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17);
-    self.preMonthBtn.height = ADAPTIVE_SIZE_FLOAT(13);
+    self.preMonthBtn.height = 13;
     self.preMonthBtn.x = ADAPTIVE_SIZE_FLOAT(19);
     self.preMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16);
     
     self.nextMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17);
-    self.nextMonthBtn.height = ADAPTIVE_SIZE_FLOAT(13);
+    self.nextMonthBtn.height = 13;
     self.nextMonthBtn.x = self.width - ADAPTIVE_SIZE_FLOAT(17 + 19);
     self.nextMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16);
     
@@ -60,7 +60,7 @@
     self.titleLab.centerX = self.centerX;
     self.titleLab.y = ADAPTIVE_SIZE_FLOAT(11);
     
-    CGFloat weekleftInset = ADAPTIVE_SIZE_FLOAT(14);
+    CGFloat weekleftInset = ADAPTIVE_SIZE_FLOAT(14.f);
     CGFloat weekY = self.height - ADAPTIVE_SIZE_FLOAT(17 + 9);
     [self.weekDayLabs enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSLog(@"self.width:%f",self.width);
@@ -106,7 +106,7 @@
     UILabel *dateLabel = [[UILabel alloc] init];
     dateLabel.textColor = [UIColor colorWithHexString:@"0x666666"];
     dateLabel.textAlignment = NSTextAlignmentCenter;
-    dateLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:ADAPTIVE_SIZE_FLOAT(16)];
+    dateLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
     [self addSubview:dateLabel];
     self.titleLab = dateLabel;
 }
