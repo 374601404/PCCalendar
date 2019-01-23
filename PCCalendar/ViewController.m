@@ -25,6 +25,14 @@
     }];
     calendarView.selectedDate = [NSDate date];
     [self.view addSubview:calendarView];
+    UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(80, 500, 100, 50)];
+    shadowView.backgroundColor = [UIColor redColor];
+    shadowView.layer.cornerRadius = 5.0;
+    shadowView.layer.shadowColor = [UIColor whiteColor].CGColor;
+    shadowView.layer.shadowRadius = 10.f;
+    shadowView.layer.shadowOffset = CGSizeMake(5, 5);
+    shadowView.layer.shadowOpacity = 1.0;
+    [self.view addSubview:shadowView];
 }
 
 

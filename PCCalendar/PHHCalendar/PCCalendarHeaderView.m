@@ -45,15 +45,15 @@
 
 - (void)layoutSubviews{
     
-    self.preMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17);
-    self.preMonthBtn.height = 13;
-    self.preMonthBtn.x = ADAPTIVE_SIZE_FLOAT(19);
-    self.preMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16);
+    self.preMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17 + 20);
+    self.preMonthBtn.height = 13 + 20;
+    self.preMonthBtn.x = ADAPTIVE_SIZE_FLOAT(19 - 10);
+    self.preMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16 - 10);
     
-    self.nextMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17);
-    self.nextMonthBtn.height = 13;
-    self.nextMonthBtn.x = self.width - ADAPTIVE_SIZE_FLOAT(17 + 19);
-    self.nextMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16);
+    self.nextMonthBtn.width = ADAPTIVE_SIZE_FLOAT(17 + 20);
+    self.nextMonthBtn.height = 13 + 20;
+    self.nextMonthBtn.x = self.width - ADAPTIVE_SIZE_FLOAT(17 + 19 + 10);
+    self.nextMonthBtn.y = ADAPTIVE_SIZE_FLOAT(16 - 10);
     
     self.titleLab.width = ADAPTIVE_SIZE_FLOAT(139);
     self.titleLab.height = ADAPTIVE_SIZE_FLOAT(22);
@@ -86,17 +86,19 @@
 - (void)pc_setupPreAndNextBtn{
     //顶部切换月份按钮
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setBackgroundImage:[UIImage imageNamed:@"yj_common_backstyleOne_normal.png"] forState:UIControlStateNormal];
-    [leftBtn setBackgroundImage:[UIImage imageNamed:@"yj_common_backstyleOne_selected.png"] forState:UIControlStateSelected];
+    [leftBtn setImage:[UIImage imageNamed:@"yj_common_backstyleOne_normal.png"] forState:UIControlStateNormal];
+    [leftBtn setImage:[UIImage imageNamed:@"yj_common_backstyleOne_selected.png"] forState:UIControlStateSelected];
     leftBtn.tag = PCCalendarMonthBtn_Previous;
+    leftBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [leftBtn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.preMonthBtn = leftBtn;
     [self addSubview:leftBtn];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightBtn setBackgroundImage:[UIImage imageNamed:@"yj_common_forwardstyleOne_normal.png"] forState:UIControlStateNormal];
-    [rightBtn setBackgroundImage:[UIImage imageNamed:@"yj_common_forwardstyleOne_selected.png"] forState:UIControlStateSelected];
+    [rightBtn setImage:[UIImage imageNamed:@"yj_common_forwardstyleOne_normal.png"] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"yj_common_forwardstyleOne_selected.png"] forState:UIControlStateSelected];
     rightBtn.tag = PCCalendarMonthBtn_Next;
+    rightBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [rightBtn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.nextMonthBtn = rightBtn;
     [self addSubview:rightBtn];
